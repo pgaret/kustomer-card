@@ -1,37 +1,12 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
-        <script>
-            function loadContext() {
-                // Kustomer.initialize is required for card visibility in panel.
-                Kustomer.initialize(function(contextJSON) {
-                    var customer_attributes = contextJSON.customer.attributes;
-                    if (customer_attributes.emails.length) {
-                        var email = customer_attributes.emails[0].email;
-                        var a = document.createElement('a');
-                        var linkText = document.createTextNode("Google");
-                        a.appendChild(linkText);
-                        a.title = "Search google for information about the customer";
-                        a.href = "https://www.google.com/#q=" + encodeURIComponent(email);
-                        a.target = "_blank";
-                        document.getElementById("container").appendChild(a);
-                    } else {
-                        // customer has no email addresses - close the card
-                        Kustomer.close();
-                    }
-                });
-            }
-        </script>
-    </head>
-    <body onload="loadContext()">
-        <div class="ui card mainCard">
-            <div class="content">
-                <div class="ui header cardHeader">
-                    Google Search
-                </div>
-            </div>
-            <hr class="lineBreak">
-            <div id="container" class="ui one textArea"></div>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='js/app.js'></script>
+  </head>
+  <body onLoad='postCard()'>
+    This page got loaded
+  </body>
 </html>
