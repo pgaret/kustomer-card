@@ -2,57 +2,27 @@
     <head>
       <link rel="stylesheet" href="css/card.min.css">
       <link rel="stylesheet" href="css/genericCard.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
       <script src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
-      <script>
-        function loadContext() {
-        // Kustomer.initialize is required for card visibility in panel.
-          Kustomer.initialize(function(contextJSON) {
-              var customer_attributes = contextJSON.customer.attributes;
-              console.log("Customer Attr: "+customer_attributes)
-              if (customer_attributes.emails.length) {
-                  var email = customer_attributes.emails[0].email;
-                  Kustomer.request({
-                    url: '/v1/customers/email='+email,
-                    method: 'get'
-                  }, function(err, customer){
-                    console.log("Error: ")
-                    console.log(err)
-                    console.log("Customer: ")
-                    console.log(customer)
-                    Kustomer.request({
-                      url: '/v1/customers/'+customer.id+"/klasses/order",
-                      method: 'get'
-                    },function(err, orders){
-                      console.log("Error: ")
-                      console.log(err)
-                      console.log("Orders: ")
-                      console.log(orders)
-                    })
-                  })
-                  var a = document.createElement('a');
-                  var linkText = document.createTextNode("Google");
-                  a.appendChild(linkText);
-                  a.title = "Search google for information about the customer";
-                  a.href = "https://www.google.com/#q=" + encodeURIComponent(email);
-                  a.target = "_blank";
-                  document.getElementById("container").appendChild(a);
-              } else {
-                  // customer has no email addresses - close the card
-                  Kustomer.close();
-              }
-            });
-          }
-        </script>
+      <script src="js/moment.js"></script>
+      <script src="js/app.js"></script>
     </head>
-    <body onload="loadContext()">
-        <div class="ui card mainCard">
+    <body ng-app='ContextCard'>
+        <div ng-controller='Index as table' class="ui card mainCard">
             <div class="content">
                 <div class="ui header cardHeader">
                     Show Email
                 </div>
             </div>
             <hr class="lineBreak">
-            <div id="container" class="ui one textArea"><i>Emails: </i></div>
+            <div id="container" class="ui one textArea">
+              <section ng-if='!table.loaded_orders'>Loading Orders...</section>
+              <section ng-if='table.loaded_orders' ng-repeat='order in table.orders'>
+                <i>Orders: </i>
+                {{ $log(order) }}
+                {{ order.data.orderTitle }}
+              </section>
+            </div>
         </div>
     </body>
 </html>
