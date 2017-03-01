@@ -1,10 +1,14 @@
 angular.module("ContextCard", [])
   .controller('Index', ['$scope', '$rootScope', function($scope, $rootScope){
-    this.loaded_orders = false
-    this.checkBasics = () => {
+    $scope.loaded_orders = false
+    $scope.orders = []
+    $scope.checkBasics = () => {
       console.log("Check Basics")
     }
-    this.initializeOrders = function(){
+    $scope.printScope = () => {
+      console.log($scope)
+    }
+    $scope.initializeOrders = function(){
       console.log("initialize orders")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
@@ -22,8 +26,10 @@ angular.module("ContextCard", [])
               method: 'get'
             },function(err, orders){
               console.log(orders)
-              this.orders = orders
-              this.loaded_orders = true
+              $scope.$apply(()=>{
+                $scope.orders = orders
+                $scope.loaded_orders = true
+              })
             })
           })
         } else {
