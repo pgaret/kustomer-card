@@ -20,6 +20,7 @@
             <div id="container" class="ui one textArea">
               <section ng-if='!loaded_orders'>Loading Orders...</section>
               <section ng-if='loaded_orders && orderDetails === -1'>
+                <h3 style='text-align: center;'>Order History</h3>
                 <table>
                   <tr>
                     <th>Title</th>
@@ -33,21 +34,21 @@
                   </tr>
                 </table>
               </section>
-                <section ng-if='loaded_orders && orderDetails >= 0'>
-                  <button ng-click='showOrder(-1)'>Back</button>
-                  <p style='text-align: center;'>{{ orders[orderDetails].attributes.data.orderTitle }}</p>
-                  <table>
-                    <tr>
-                      <th>Item</th>
-                      <th>Qty</th>
-                      <th>Price</th>
-                    </tr>
-                  <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
-                    <td>{{ lineItem.title }}</td>
-                    <td>{{ lineItem.quantity }}</td>
-                    <td>{{ multiplyMoney(lineItem.unitPrice, lineItem.quantity) }}</td>
+              <section ng-if='loaded_orders && orderDetails >= 0'>
+                <button ng-click='showOrder(-1)'>Back</button>
+                <h3 style='text-align: center;'>{{ orders[orderDetails].attributes.data.orderTitle }}</h3>
+                <table>
+                  <tr>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
                   </tr>
-                </section>
+                <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
+                  <td>{{ lineItem.title }}</td>
+                  <td>{{ lineItem.quantity }}</td>
+                  <td>{{ multiplyMoney(lineItem.unitPrice, lineItem.quantity) }}</td>
+                </tr>
+              </section>
             </div>
         </div>
     </body>

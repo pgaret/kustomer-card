@@ -15,6 +15,6 @@ tr{
   padding: 4%;
 }
 
-.detail tr:nth-child(even){
+tr:nth-child(even){
   background-color: #4CAF50;
 }
