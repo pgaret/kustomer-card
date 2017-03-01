@@ -14,7 +14,7 @@ angular.module("ContextCard", [])
       $scope.showDetails = index
     }
     $scope.initializeOrders = function(){
-      console.log("more table updates")
+      console.log("linking updates")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)

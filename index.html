@@ -26,9 +26,9 @@
                     <th>Total</th>
                   </tr>
                 <tr ng-repeat='order in orders' class='order'>
-                  <td><a ng-click='showDetails($index)' >{{ order.attributes.data.orderTitle }}</a></td>
-                  <td><a ng-click='showDetails($index)' >{{ parseDate(order.attributes.createdAt)}}</a></td>
-                  <td><a ng-click='showDetails($index)' >{{ order.data.orderTotal }}</a></td>
+                  <td><a href="#" ng-click='showDetails($index)' >{{ order.attributes.data.orderTitle }}</a></td>
+                  <td>>{{ parseDate(order.attributes.createdAt)}}</a></td>
+                  <td>{{ order.attributes.data.orderTotal }}</td>
                 </tr>
               </table>
                 <section ng-if='showDetails >= 0'>
