@@ -18,10 +18,12 @@
             <div id="container" class="ui one textArea">
               <button ng-click='printScope()'>Scope</button><br>
               <section ng-if='!loaded_orders'>Loading Orders...</section>
-              <section ng-if='loaded_orders' ng-repeat='order in orders'>
+              <section ng-if='loaded_orders'>
                 <i>Orders: </i>
-                {{ $log(order) }}
-                {{ order.attributes.data.orderTitle }}
+                <article ng-repeat='order in orders'>
+                  {{ $log(order) }}
+                  {{ order.attributes.data.orderTitle }}
+                </article>
               </section>
             </div>
         </div>

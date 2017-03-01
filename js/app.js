@@ -2,14 +2,11 @@ angular.module("ContextCard", [])
   .controller('Index', ['$scope', '$rootScope', function($scope, $rootScope){
     $scope.loaded_orders = false
     $scope.orders = []
-    $scope.checkBasics = () => {
-      console.log("Check Basics")
-    }
     $scope.printScope = () => {
       console.log($scope)
     }
     $scope.initializeOrders = function(){
-      console.log("initialize orders")
+      console.log("changed stuff")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
