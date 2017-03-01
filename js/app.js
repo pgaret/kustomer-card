@@ -19,7 +19,7 @@ angular.module("ContextCard", [])
       return total
     }
     $scope.initializeOrders = function(){
-      console.log("money formatting")
+      console.log("more formatting")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)

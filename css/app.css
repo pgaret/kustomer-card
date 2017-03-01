@@ -12,5 +12,9 @@ tr{
 
 .title{
   padding: 4%;
-  padding-left: 4%;
+  padding-left: 8%;
+}
+
+.detail tr:nth-child(even){
+  background-color: #4CAF50;
 }
