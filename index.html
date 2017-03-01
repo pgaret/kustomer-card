@@ -18,23 +18,35 @@
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
               <section ng-if='!loaded_orders'>Loading Orders...</section>
-              <section ng-if='loaded_orders'>
+              <section ng-if='loaded_orders && showDetails === -1'>
                 <table>
                   <tr>
                     <th>Title</th>
                     <th>Date</th>
                     <th>Total</th>
                   </tr>
-                <tr ng-repeat='order in orders' class='order'>
-                  <td><a href="#" ng-click='showDetails($index)' >{{ order.attributes.data.orderTitle }}</a></td>
-                  <td>>{{ parseDate(order.attributes.createdAt)}}</a></td>
-                  <td>{{ order.attributes.data.orderTotal }}</td>
-                </tr>
-              </table>
-                <section ng-if='showDetails >= 0'>
-                  <p>{{ orders[showDetails].attributes.data.orderTitle }}</p>
-                </section>
+                  <tr ng-repeat='order in orders' class='order'>
+                    <td><a href="#" ng-click='showOrder($index)' >{{ order.attributes.data.orderTitle }}</a></td>
+                    <td>>{{ parseDate(order.attributes.createdAt)}}</a></td>
+                    <td>{{ order.attributes.data.orderTotal }}</td>
+                  </tr>
+                </table>
               </section>
+                <section ng-if='loaded_orders && showDetails >= 0'>
+                  <button ng-click='showOrder(-1)'>Back</button>
+                  <p>{{ orders[orderDetails].attributes.data.orderTitle }}</p>
+                  <table>
+                    <tr>
+                      <th>Item</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                    </tr>
+                  <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems'>
+                    <td>{{ lineItem.title }}</td>
+                    <td>{{ lineItem.quantity }}</td>
+                    <td>{{ lineItem.unitPrice*lineItem.quantity }}</td>
+                  </tr>
+                </section>
             </div>
         </div>
     </body>
