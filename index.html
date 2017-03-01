@@ -12,12 +12,11 @@
         <div ng-controller='Index' ng-init='initializeOrders()' class="ui card mainCard">
             <div class="content">
                 <div class="ui header cardHeader">
-                    Show Email
+                    <p id='title'>Orders:</p>
                 </div>
             </div>
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
-              <button ng-click='printScope()'>Scope</button><br>
               <section ng-if='!loaded_orders'>Loading Orders...</section>
               <section ng-if='loaded_orders'>
                 <table>
@@ -27,11 +26,14 @@
                     <th>Total</th>
                   </tr>
                 <tr ng-repeat='order in orders' class='order'>
-                    <td>{{ order.attributes.data.orderTitle }}</td>
-                    <td>{{ parseDate(order.attributes.createdAt)}}</td>
-                    <td>{{ parseDate(order.data.orderTotal)}}</td>
+                  <td><a ng-click='showDetails($index)' >{{ order.attributes.data.orderTitle }}</a></td>
+                  <td><a ng-click='showDetails($index)' >{{ parseDate(order.attributes.createdAt)}}</a></td>
+                  <td><a ng-click='showDetails($index)' >{{ order.data.orderTotal }}</a></td>
                 </tr>
-                </span>
+              </table>
+                <section ng-if='showDetails >= 0'>
+                  <p>{{ orders[showDetails].attributes.data.orderTitle }}</p>
+                </section>
               </section>
             </div>
         </div>
