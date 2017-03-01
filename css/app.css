@@ -15,6 +15,10 @@ table{
   overflow: scroll;
 }
 
+#lineitems{
+  margin-top: 10px;
+}
+
 tr{
   font-size: 4vw;
 }

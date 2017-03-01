@@ -50,9 +50,7 @@
                     <td>{{ parseDate(orders[orderDetails].attributes.createdAt)}}</a></td>
                     <td>{{ orders[orderDetails].attributes.data.orderTotal }}</td>
                   </tr>
-                </table>
-                <table cellspacing='0'>
-                  <tr>
+                  <tr id='lineitems'>
                     <th ng-repeat='key in orders[orderDetails].lineItemKeys'>{{key}}</th>
                   </tr>
                   <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
