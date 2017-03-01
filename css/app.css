@@ -5,6 +5,8 @@ body{
 table{
   text-align: center;
   margin: 0 auto;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 tr{
@@ -16,5 +18,5 @@ tr{
 }
 
 tr:nth-child(even){
-  background-color: #4CAF50;
+  background-color: #F2F2F2;
 }

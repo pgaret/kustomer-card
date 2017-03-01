@@ -37,7 +37,7 @@
               <section ng-if='loaded_orders && orderDetails >= 0'>
                 <button ng-click='showOrder(-1)'>Back</button>
                 <h3 style='text-align: center;'>{{ orders[orderDetails].attributes.data.orderTitle }}</h3>
-                <table>
+                <table cellspacing='0'>
                   <tr>
                     <th>Item</th>
                     <th>Qty</th>
