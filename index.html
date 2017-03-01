@@ -2,13 +2,12 @@
     <head>
         <script src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
         <script>
-        console.log("Script loaded")
             function loadContext() {
                 // Kustomer.initialize is required for card visibility in panel.
                 Kustomer.initialize(function(contextJSON) {
                     var customer_attributes = contextJSON.customer.attributes;
-                    console.log(customer_attributes.emails)
-                    console.log(customer_attributes.emails.length)
+                    console.log("Emails: "+customer_attributes.emails)
+                    console.log("Email Length: "+customer_attributes.emails.length)
                     if (customer_attributes.emails.length) {
                         var email = customer_attributes.emails[0].email;
                         var a = document.createElement('a');
