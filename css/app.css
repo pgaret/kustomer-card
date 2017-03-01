@@ -1,3 +1,7 @@
+body{
+  min-height: 100px;
+}
+
 .order{
   padding: 1%;
 }
