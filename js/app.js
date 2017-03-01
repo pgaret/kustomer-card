@@ -13,8 +13,11 @@ angular.module("ContextCard", [])
     $scope.showOrder = (index) => {
       $scope.orderDetails = index
     }
+    $scope.parseMoney = (money) => {
+      return accounting.unformat(money)
+    }
     $scope.initializeOrders = function(){
-      console.log("line item order details")
+      console.log("money parse")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
