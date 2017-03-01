@@ -18,7 +18,7 @@
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
               <section ng-if='!loaded_orders'>Loading Orders...</section>
-              <section ng-if='loaded_orders && showDetails === -1'>
+              <section ng-if='loaded_orders && orderDetails === -1'>
                 <table>
                   <tr>
                     <th>Title</th>
@@ -32,7 +32,7 @@
                   </tr>
                 </table>
               </section>
-                <section ng-if='loaded_orders && showDetails >= 0'>
+                <section ng-if='loaded_orders && orderDetails >= 0'>
                   <button ng-click='showOrder(-1)'>Back</button>
                   <p>{{ orders[orderDetails].attributes.data.orderTitle }}</p>
                   <table>

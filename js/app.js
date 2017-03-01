@@ -14,7 +14,7 @@ angular.module("ContextCard", [])
       $scope.orderDetails = index
     }
     $scope.initializeOrders = function(){
-      console.log("line item numbers")
+      console.log("line item order details")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
