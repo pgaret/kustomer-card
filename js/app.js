@@ -6,7 +6,7 @@ angular.module("ContextCard", [])
       console.log($scope)
     }
     $scope.initializeOrders = function(){
-      console.log("changed stuff")
+      console.log("more changes")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)

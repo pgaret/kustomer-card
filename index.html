@@ -2,6 +2,7 @@
     <head>
       <link rel="stylesheet" href="css/card.min.css">
       <link rel="stylesheet" href="css/genericCard.min.css">
+      <link rel="stylesheet" href="css/app.css">
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
       <script src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
       <script src="js/moment.js"></script>
@@ -16,14 +17,13 @@
             </div>
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
+              <i>Orders: </i><br>
               <button ng-click='printScope()'>Scope</button><br>
               <section ng-if='!loaded_orders'>Loading Orders...</section>
               <section ng-if='loaded_orders'>
-                <i>Orders: </i>
-                <article ng-repeat='order in orders'>
-                  {{ $log(order) }}
+                <span ng-repeat='order in orders' class='order'>
                   {{ order.attributes.data.orderTitle }}
-                </article>
+                </span>
               </section>
             </div>
         </div>
