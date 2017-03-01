@@ -33,7 +33,7 @@ angular.module("ContextCard", [])
               url: '/v1/customers/'+customer.id+"/klasses/order",
               method: 'get'
             },function(err, orders){
-              console.log(orders) 
+              console.log(orders)
               if (orders.length > 0){
                 $scope.$apply(()=>{
                   $scope.orders = orders

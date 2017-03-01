@@ -52,14 +52,10 @@
                 </table>
                 <table cellspacing='0'>
                   <tr>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th>Price</th>
+                    <th ng-repeat='key in Object(orders[orderDetails].attributes.data.lineItems[0]).keys'>{{key}}</th>
                   </tr>
                   <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
-                    <td>{{ lineItem.title }}</td>
-                    <td>{{ lineItem.quantity }}</td>
-                    <td>{{ multiplyMoney(lineItem.unitPrice, lineItem.quantity) }}</td>
+                    <td ng-repeat='(key, val) in lineItem'>{{val}}</td>
                   </tr>
               </section>
             </div>
