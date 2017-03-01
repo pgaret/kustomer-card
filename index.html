@@ -2,9 +2,11 @@
     <head>
         <script src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
         <script>
+        console.log("Script loaded")
             function loadContext() {
                 // Kustomer.initialize is required for card visibility in panel.
                 Kustomer.initialize(function(contextJSON) {
+                  console.log(contextJSON)
                     var customer_attributes = contextJSON.customer.attributes;
                     if (customer_attributes.emails.length) {
                         var email = customer_attributes.emails[0].email;
@@ -27,7 +29,7 @@
         <div class="ui card mainCard">
             <div class="content">
                 <div class="ui header cardHeader">
-                    Google Search
+                    Show Emails
                 </div>
             </div>
             <hr class="lineBreak">

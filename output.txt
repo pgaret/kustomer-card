@@ -1,0 +1,101 @@
+{
+    "meta": {
+        "pageSize": 100, "page": 1
+    }
+    ,
+    "data":[ {
+        "type":"card",
+        "id":"58b48e2c0193771100edd326",
+        "attributes": {
+            "name": "kustomer.conversation.sentiment", "description": "conversation sentiment card", "url": "https://cdnapps.kustomerapp.com/kustomer/cards/conversationsentiment/latest/index.html", "contexts": ["conversation"], "createdAt": "2017-02-27T20:38:04.065Z", "updatedAt": "2017-02-27T20:38:04.065Z", "modifiedAt": "2017-02-27T20:38:04.065Z"
+        }
+        ,
+        "relationships": {
+            "org": {
+                "links": {
+                    "self": "/v1/orgs/58b48e2b53052f11001a98d7"
+                }
+                ,
+                "data": {
+                    "type": "org", "id": "58b48e2b53052f11001a98d7"
+                }
+            }
+            ,
+            "app": {
+                "links": {
+                    "self": "/v1/apps/available/kustomer-0.1.0"
+                }
+                ,
+                "data": {
+                    "type": "app", "id": "kustomer-0.1.0"
+                }
+            }
+        }
+        ,
+        "links": {
+            "self": "/v1/cards/58b48e2c0193771100edd326"
+        }
+    }
+    ,
+    {
+        "type":"card",
+        "id":"58b6120e7b40591000b59450",
+        "attributes": {
+            "name": "cardname9000", "description": "desc of a card", "url": "https://pgaret.github.io/kustomer-card/index.html", "contexts": ["customer", "conversation"], "createdAt": "2017-03-01T00:13:02.297Z", "updatedAt": "2017-03-01T00:13:02.297Z", "modifiedAt": "2017-03-01T00:13:02.297Z"
+        }
+        ,
+        "relationships": {
+            "org": {
+                "links": {
+                    "self": "/v1/orgs/58b48e2b53052f11001a98d7"
+                }
+                ,
+                "data": {
+                    "type": "org", "id": "58b48e2b53052f11001a98d7"
+                }
+            }
+        }
+        ,
+        "links": {
+            "self": "/v1/cards/58b6120e7b40591000b59450"
+        }
+    }
+    ,
+    {
+        "type":"card",
+        "id":"58b48e2c0193771100edd325",
+        "attributes": {
+            "name": "kustomer.customer.sentiment", "description": "customer sentiment card", "url": "https://cdnapps.kustomerapp.com/kustomer/cards/customersentiment/latest/index.html", "contexts": ["customer"], "createdAt": "2017-02-27T20:38:04.064Z", "updatedAt": "2017-02-27T20:38:04.064Z", "modifiedAt": "2017-02-27T20:38:04.064Z"
+        }
+        ,
+        "relationships": {
+            "org": {
+                "links": {
+                    "self": "/v1/orgs/58b48e2b53052f11001a98d7"
+                }
+                ,
+                "data": {
+                    "type": "org", "id": "58b48e2b53052f11001a98d7"
+                }
+            }
+            ,
+            "app": {
+                "links": {
+                    "self": "/v1/apps/available/kustomer-0.1.0"
+                }
+                ,
+                "data": {
+                    "type": "app", "id": "kustomer-0.1.0"
+                }
+            }
+        }
+        ,
+        "links": {
+            "self": "/v1/cards/58b48e2c0193771100edd325"
+        }
+    }
+    ],
+    "links": {
+        "self": "/v1/cards/?0=123&1=125&page=1&pageSize=100", "first": "/v1/cards/?0=123&1=125&page=1&pageSize=100", "prev": null, "next": null
+    }
+}
