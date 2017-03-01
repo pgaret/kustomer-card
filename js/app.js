@@ -19,7 +19,7 @@ angular.module("ContextCard", [])
       return total
     }
     $scope.initializeOrders = function(){
-      console.log("we logging")
+      console.log("keys")
       Kustomer.initialize(function(contextJSON) {
         var customer_attributes = contextJSON.customer.attributes;
         if (customer_attributes.emails.length) {
@@ -36,6 +36,9 @@ angular.module("ContextCard", [])
               console.log(orders)
               if (orders.length > 0){
                 $scope.$apply(()=>{
+                  console.log("Key Stuff")
+                  console.log(orders[0].attributes.data.lineItems[0])
+                  console.log(Object.keys(orders[0].attributes.data.lineItems[0]))
                   $scope.orders = orders
                   $scope.loaded_orders = true
                 })
