@@ -20,8 +20,18 @@
               <button ng-click='printScope()'>Scope</button><br>
               <section ng-if='!loaded_orders'>Loading Orders...</section>
               <section ng-if='loaded_orders'>
-                <span ng-repeat='order in orders' class='order'>
-                  {{ order.attributes.data.orderTitle }}
+                <table>
+                  <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                <tr ng-repeat='order in orders' class='order'>
+                    <td>{{ order.attributes.data.orderTitle }}</td>
+                    <td>{{ parseDate(order.attributes.createdAt)}}
+                </tr>
                 </span>
               </section>
             </div>

@@ -1,12 +1,17 @@
 angular.module("ContextCard", [])
   .controller('Index', ['$scope', '$rootScope', function($scope, $rootScope){
+    moment().format()
     $scope.loaded_orders = false
     $scope.orders = []
     $scope.printScope = () => {
       console.log($scope)
     }
+    $scope.parseDate = (date) => {
+      let new_date = moment(date)
+      debugger
+    }
     $scope.initializeOrders = function(){
-      console.log("all changes")
+      console.log("table changes")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
