@@ -8,9 +8,16 @@
         // Kustomer.initialize is required for card visibility in panel.
           Kustomer.initialize(function(contextJSON) {
               var customer_attributes = contextJSON.customer.attributes;
-              console.log(customer_attributes)
+              console.log("Customer Attr: "+customer_attributes)
               if (customer_attributes.emails.length) {
                   var email = customer_attributes.emails[0].email;
+                  Kustomer.request({
+                    url: '/v1/customers/email='+email,
+                    method='get'
+                  }, function(err, customer){
+                    console.log("Error: "+customer)
+                    console.log("Customer: "+customer)
+                  })
                   var a = document.createElement('a');
                   var linkText = document.createTextNode("Google");
                   a.appendChild(linkText);
