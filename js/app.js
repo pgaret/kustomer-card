@@ -42,6 +42,7 @@ angular.module("ContextCard", [])
           })
         } else {
           // customer has no email addresses - close the card
+          $scope.$apply(()=>{ $scope.orderDetails = -2 })
           Kustomer.close();
         }
       });
