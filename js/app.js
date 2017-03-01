@@ -34,15 +34,18 @@ angular.module("ContextCard", [])
               method: 'get'
             },function(err, orders){
               console.log(orders)
-              $scope.$apply(()=>{
-                $scope.orders = orders
-                $scope.loaded_orders = true
-              })
+              if (orders.length > 0){
+                $scope.$apply(()=>{
+                  $scope.orders = orders
+                  $scope.loaded_orders = true
+                })
+              } else {
+                Kustomer.close()
+              }
             })
           })
         } else {
           // customer has no email addresses - close the card
-          $scope.$apply(()=>{ $scope.orderDetails = -2 })
           Kustomer.close();
         }
       });

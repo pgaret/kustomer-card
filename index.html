@@ -19,9 +19,6 @@
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
               <section ng-if='!loaded_orders'>Loading Orders...</section>
-              <section ng-if='orderDetails === -2'>
-                <h3 style='text-align: center;'>No Orders</h3>
-              </section>
               <section ng-if='loaded_orders && orderDetails === -1'>
                 <h3 style='text-align: center;'>Order History</h3>
                 <table>
