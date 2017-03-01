@@ -11,10 +11,10 @@ angular.module("ContextCard", [])
       return moment(moment(date)).format('MM/DD/YY')
     }
     $scope.showOrder = (index) => {
-      $scope.showDetails = index
+      $scope.orderDetails = index
     }
     $scope.initializeOrders = function(){
-      console.log("line item updates")
+      console.log("line item numbers")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)

@@ -27,7 +27,7 @@
                   </tr>
                   <tr ng-repeat='order in orders' class='order'>
                     <td><a href="#" ng-click='showOrder($index)' >{{ order.attributes.data.orderTitle }}</a></td>
-                    <td>>{{ parseDate(order.attributes.createdAt)}}</a></td>
+                    <td>{{ parseDate(order.attributes.createdAt)}}</a></td>
                     <td>{{ order.attributes.data.orderTotal }}</td>
                   </tr>
                 </table>
