@@ -19,7 +19,7 @@ angular.module("ContextCard", [])
       return total
     }
     $scope.initializeOrders = function(){
-      console.log("so.much.formatting!!")
+      console.log("we logging")
       Kustomer.initialize(function(contextJSON) {
         var customer_attributes = contextJSON.customer.attributes;
         if (customer_attributes.emails.length) {
