@@ -13,7 +13,7 @@
                   var email = customer_attributes.emails[0].email;
                   Kustomer.request({
                     url: '/v1/customers/email='+email,
-                    method='get'
+                    method: 'get'
                   }, function(err, customer){
                     console.log("Error: "+customer)
                     console.log("Customer: "+customer)
