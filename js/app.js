@@ -15,16 +15,12 @@ angular.module("ContextCard", [])
     }
     $scope.multiplyMoney = (unitPrice, quantity) => {
       let total = accounting.unformat(unitPrice)*quantity
-      console.log("Total: "+total)
       total = accounting.formatMoney(total,[symbol = "$"],[precision = 2],[thousand = ","],[decimal = "."],[format = "%s%v"])
-      console.log("Total: "+total)
       return total
     }
     $scope.initializeOrders = function(){
-      console.log("more formatting")
+      console.log("so.much.formatting!!")
       Kustomer.initialize(function(contextJSON) {
-        console.log("initialize kustomer")
-        console.log(contextJSON)
         var customer_attributes = contextJSON.customer.attributes;
         if (customer_attributes.emails.length) {
           var email = customer_attributes.emails[0].email;
