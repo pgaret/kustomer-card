@@ -44,9 +44,9 @@
                     <th>Total</th>
                   </tr>
                   <tr>
-                    <td>{{ order.attributes.data.orderTitle }}</td>
-                    <td>{{ parseDate(order.attributes.createdAt)}}</a></td>
-                    <td>{{ order.attributes.data.orderTotal }}</td>
+                    <td>{{ orders[orderDetails].attributes.data.orderTitle }}</td>
+                    <td>{{ parseDate(orders[orderDetails].attributes.createdAt)}}</a></td>
+                    <td>{{ orders[orderDetails].attributes.data.orderTotal }}</td>
                   </tr>
                 </table>
                 <table cellspacing='0'>
