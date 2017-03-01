@@ -41,6 +41,7 @@ angular.module("ContextCard", [])
                     for (let j = 0; j < orders[i].attributes.data.lineItems.length; i++){
                       let keys = Object.keys(orders[i].attributes.data.lineItems[j])
                       for (let k = 0; k < keys.length; k++){
+                        console.log(orders[i].lineItemKeys)
                         if (!orders[i].lineItemKeys.includes(keys[k])){
                           orders[i].lineItemKeys.push(keys[k])
                         }
