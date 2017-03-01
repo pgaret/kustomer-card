@@ -7,11 +7,10 @@ angular.module("ContextCard", [])
       console.log($scope)
     }
     $scope.parseDate = (date) => {
-      let new_date = moment(date)
-      debugger
+      return moment(moment(date)).format('MM/DD/YY')
     }
     $scope.initializeOrders = function(){
-      console.log("table changes")
+      console.log("date formatting changes")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
