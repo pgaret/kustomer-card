@@ -13,7 +13,7 @@ angular.module("ContextCard", [])
     $scope.showOrder = (index) => {
       $scope.orderDetails = index
     }
-    $scope.parseMoney = (unitPrice, quantity) => {
+    $scope.multiplyMoney = (unitPrice, quantity) => {
       let total = accounting.unformat(unitPrice)*quantity
       total = accounting.formatMoney(total,[symbol = "$"],[precision = 2],[thousand = ","],[decimal = "."],[format = "%s%v"])
       return total
