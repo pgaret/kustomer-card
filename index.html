@@ -14,7 +14,7 @@
             <div class="content">
                 <div class="ui header cardHeader title">
                     <p ng-if='orderDetails < 0'>Order History:</p>
-                    <p ng-if='orderDetails > 0'>Order Details: {{ orders[orderDetails].id }}
+                    <p ng-if='orderDetails > 0'>{{ orders[orderDetails].title }}
                 </div>
             </div>
             <hr class="lineBreak">
@@ -37,6 +37,7 @@
               <section ng-if='loaded_orders && orderDetails >= 0'>
                 <button ng-click='showOrder(-1)'>Back</button>
                 <h3 style='text-align: center;'>{{ orders[orderDetails].attributes.data.orderTitle }}</h3>
+                <p>{{ orders[orderDetails].attributes.orderDescription }}</p>
                 <table cellspacing='0'>
                   <tr>
                     <th>Title</th>
