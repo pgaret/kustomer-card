@@ -39,15 +39,27 @@
                 <h3 style='text-align: center;'>{{ orders[orderDetails].attributes.data.orderTitle }}</h3>
                 <table cellspacing='0'>
                   <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                  </tr>
+                  <tr>
+                    <td>{{ order.attributes.data.orderTitle }}</td>
+                    <td>{{ parseDate(order.attributes.createdAt)}}</a></td>
+                    <td>{{ order.attributes.data.orderTotal }}</td>
+                  </tr>
+                </table>
+                <table cellspacing='0'>
+                  <tr>
                     <th>Item</th>
                     <th>Qty</th>
                     <th>Price</th>
                   </tr>
-                <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
-                  <td>{{ lineItem.title }}</td>
-                  <td>{{ lineItem.quantity }}</td>
-                  <td>{{ multiplyMoney(lineItem.unitPrice, lineItem.quantity) }}</td>
-                </tr>
+                  <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
+                    <td>{{ lineItem.title }}</td>
+                    <td>{{ lineItem.quantity }}</td>
+                    <td>{{ multiplyMoney(lineItem.unitPrice, lineItem.quantity) }}</td>
+                  </tr>
               </section>
             </div>
         </div>

@@ -13,6 +13,10 @@ tr{
   font-size: 4vw;
 }
 
+td{
+  padding: 1%;
+}
+
 .title{
   padding: 4%;
 }

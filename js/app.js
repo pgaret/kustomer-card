@@ -8,7 +8,7 @@ angular.module("ContextCard", [])
       console.log($scope)
     }
     $scope.parseDate = (date) => {
-      return moment(moment(date)).format('MM/DD/YY')
+      return moment(moment(date)).format('M/D/YY')
     }
     $scope.showOrder = (index) => {
       $scope.orderDetails = index
