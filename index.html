@@ -16,6 +16,7 @@
                         a.title = "Search google for information about the customer";
                         a.href = "https://www.google.com/#q=" + encodeURIComponent(email);
                         a.target = "_blank";
+                        console.log(a)
                         document.getElementById("container").appendChild(a);
                     } else {
                         // customer has no email addresses - close the card
@@ -29,7 +30,7 @@
         <div class="ui card mainCard">
             <div class="content">
                 <div class="ui header cardHeader">
-                    Show Emails
+                    Show Email
                 </div>
             </div>
             <hr class="lineBreak">
