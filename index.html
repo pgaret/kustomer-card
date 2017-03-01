@@ -13,14 +13,14 @@
         <div ng-controller='Index' ng-init='initializeOrders()' class="ui card mainCard">
             <div class="content">
                 <div class="ui header cardHeader title">
-                    Orders:
+                    <p ng-if='orderDetails < 0'>Order History:</p>
+                    <p ng-if='orderDetails > 0'>Order Details: {{ orders[orderDetails].id }}
                 </div>
             </div>
             <hr class="lineBreak">
             <div id="container" class="ui one textArea">
               <section ng-if='!loaded_orders'>Loading Orders...</section>
               <section ng-if='loaded_orders && orderDetails === -1'>
-                <h3 style='text-align: center;'>Order History</h3>
                 <table>
                   <tr>
                     <th>Title</th>
