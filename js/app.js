@@ -36,10 +36,18 @@ angular.module("ContextCard", [])
               console.log(orders)
               if (orders.length > 0){
                 $scope.$apply(()=>{
-                  console.log("Key Stuff")
-                  console.log(orders[0].attributes.data.lineItems[0])
-                  console.log(Object.keys(orders[0].attributes.data.lineItems[0]))
                   $scope.orders = orders
+                  for (let i = 0; i < orders.length; i++){
+                    $scope.orders[i].lineItemKeys = []
+                    for (let j = 0; j < $scope.orders[i].attributes.data.lineItems.length; i++){
+                      let keys = Object.keys($scope.orders[i].attributes.data.lineItems[j])
+                      for (let k = 0; k < keys.length; k++){
+                        if (!$scope.orders[i].lineItemKeys.includes(keys[k])){
+                          $scope.orders[i].lineItemKeys.push(keys[k])
+                        }
+                      }
+                    }
+                  }
                   $scope.loaded_orders = true
                 })
               } else {

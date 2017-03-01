@@ -11,6 +11,7 @@
     </head>
     <body ng-app='ContextCard'>
         <div ng-controller='Index' ng-init='initializeOrders()' class="ui card mainCard">
+          <button ng-click='printScope()'>Scope</button>
             <div class="content">
                 <div class="ui header cardHeader title">
                     <p ng-if='orderDetails < 0'>Order History:</p>
@@ -52,11 +53,7 @@
                 </table>
                 <table cellspacing='0'>
                   <tr>
-                    <!-- <th ng-repeat='key in Object(orders[orderDetails].attributes.data.lineItems[0]).keys'>{{key}}</th> -->
-                    {{ $log('Keys: ') }}
-                    {{ $log(Object(orders[orderDetails].attributes.data.lineItems[0]).keys) }}
-                    {{ $log('Lines: ') }}
-                    {{ $log(orders[orderDetails].attributes.data.lineItems[0]) }}
+                    <th ng-repeat='key in orders[orderDetails].lineItemKeys'>{{key}}</th>
                   </tr>
                   <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
                     <td ng-repeat='(key, val) in lineItem'>{{val}}</td>
