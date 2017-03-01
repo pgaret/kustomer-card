@@ -52,7 +52,7 @@
                 </table>
                 <table cellspacing='0'>
                   <tr>
-                    <th ng-repeat='key in Object(orders[orderDetails].attributes.data.lineItems[0]).keys'>{{key}}</th>
+                    <!-- <th ng-repeat='key in Object(orders[orderDetails].attributes.data.lineItems[0]).keys'>{{key}}</th> -->
                     {{ $log('Keys: ') }}
                     {{ $log(Object(orders[orderDetails].attributes.data.lineItems[0]).keys) }}
                     {{ $log('Lines: ') }}
