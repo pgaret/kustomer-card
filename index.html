@@ -25,12 +25,11 @@
                     <th>Title</th>
                     <th>Date</th>
                     <th>Total</th>
-                    <th>Status</th>
-                    <th>Actions</th>
                   </tr>
                 <tr ng-repeat='order in orders' class='order'>
                     <td>{{ order.attributes.data.orderTitle }}</td>
                     <td>{{ parseDate(order.attributes.createdAt)}}</td>
+                    <td>{{ parseDate(order.data.orderTotal)}}</td>
                 </tr>
                 </span>
               </section>

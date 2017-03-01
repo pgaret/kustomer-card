@@ -1,6 +1,15 @@
 body{
-  min-height: 100px;
+  min-height: 300px;
+}
+
+table{
+  text-align: center;
+}
+
+tr{
+  font-size: 4vw;
 }
 
 .order{
+
 }

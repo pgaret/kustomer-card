@@ -10,7 +10,7 @@ angular.module("ContextCard", [])
       return moment(moment(date)).format('MM/DD/YY')
     }
     $scope.initializeOrders = function(){
-      console.log("date formatting changes")
+      console.log("table updates")
       Kustomer.initialize(function(contextJSON) {
         console.log("initialize kustomer")
         console.log(contextJSON)
