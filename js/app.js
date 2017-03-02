@@ -23,10 +23,11 @@ angular.module("ContextCard", [])
         if (name.includes('www') || name.includes('.com') || name.includes('.net')){
           var url = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + '45fa404fb2be9dd8b88bd3c5b34170b5756a68f0&longUrl=' + encodeURIComponent(name)
           axios.get(url).then(result=>{
-            console.log("URL: ")
-            console.log(result)
+            console.log("URL: "+result.data.data.url)
             return result.data.data.url
           })
+        } else {
+          return name
         }
       } else {
         return name
