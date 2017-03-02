@@ -18,6 +18,22 @@ angular.module("ContextCard", [])
       total = accounting.formatMoney(total,[symbol = "$"],[precision = 2],[thousand = ","],[decimal = "."],[format = "%s%v"])
       return total
     }
+    $scope.parseVal = (name) => {
+      if (moment(name).isValid()){
+        return moment(moment(name)).format('M/D/YY')
+      } else if (typeof name === 'string') {
+        if (name.includes('www') || name.includes('.com') || name.includes('.net')){
+          var url = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + '45fa404fb2be9dd8b88bd3c5b34170b5756a68f0&longUrl=' + encodeURIComponent(name)
+          axios.get(url).then(result=>{
+            console.log("URL: ")
+            console.log(result)
+          })
+          return result.data.url
+        }
+      } else {
+        return name
+      }
+    }
     $scope.initializeOrders = function(){
       console.log("keys")
       Kustomer.initialize(function(contextJSON) {
