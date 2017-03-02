@@ -55,7 +55,7 @@
                     <th ng-repeat='key in orders[orderDetails].lineItemKeys'>{{key}}</th>
                   </tr>
                   <tr ng-repeat='lineItem in orders[orderDetails].attributes.data.lineItems' class='detail'>
-                    <td ng-repeat='(key, val) in lineItem'>{{ parseVal(val) }}</td>
+                    <td ng-repeat='(key, val) in lineItem'>{{ val }}</td>
                   </tr>
               </section>
             </div>
